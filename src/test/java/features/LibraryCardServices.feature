@@ -21,3 +21,29 @@ Feature: Library Services Form Submission Testing
 As a user I want to interact with Library Services options(Email, Call, Chat)
 So that I can submit my quries successfully
 
+@EmailValid
+Scenario: LMSETC001 - Email option with valid submission
+  When the user selects the Email Option
+  And enters valid email "user@example.com"
+  And enters query "Need book on AI"
+  And clicks Submit
+  Then a success message should be displayed
+  And the service log should contain "medium=Email" and "From: user@example.com" and "Query: Need book on AI"
+  
+@EmailInvaild
+Scenario: LMSETC002 - Email option with invalid email format
+	When the user selects the Email option
+	And enters invalid email "user@@.com"
+	And enters query "Requesting materials"
+  And clicks Submit
+  Then error message "Invalid email format" should be displayed
+  And no service request should be sent
+  
+@EmailNoQuery
+ Scenario: LMSETC003 - Email option with missing query
+   When the user selects the Email option
+   And enters valid email "test@mail.com"
+   And leaves the query field empty
+   And clicks Submit
+   Then error message "Query is required" should be displayed
+ 
