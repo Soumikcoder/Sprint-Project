@@ -13,6 +13,7 @@ lib/
 # Build directories
 distrib/
 target/
+reports/
 tmp/
 gen-external-apklibs/
 out/
