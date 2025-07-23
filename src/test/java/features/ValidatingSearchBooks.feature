@@ -1,7 +1,7 @@
 Feature: Search Functionality Check
 
    @ValidData
-   Scenario: Validating the Search Book with valid data
+   Scenario: Validate search with all valid fields
       Given Navigate to the search page
       When Enter valid data for all fields
       And Click the Search button

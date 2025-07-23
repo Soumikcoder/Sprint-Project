@@ -12,7 +12,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.Status;
 import pages.HomePage;
-import pages.MembershipPage;
+//import pages.MembershipPage;
 import setup.AppPropProvider;
 import setup.DriverSetup;
 
