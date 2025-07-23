@@ -37,7 +37,7 @@ public class HomePage extends BasePage{
 		booksLink.click();
 	}
 	public void openMembershipTab() {
-		memberLink.click();
+		membershipLink.click();
 	}
 	public void openMembersTab() {
 		memberLink.click();
