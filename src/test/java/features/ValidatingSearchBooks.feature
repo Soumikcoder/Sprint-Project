@@ -3,7 +3,7 @@ Feature: Search Functionality Check
    @ValidData
    Scenario: Validate search with all valid fields
       Given Navigate to the search page
-      When Enter valid data for all fields
+      When Enter valid data for all the fields
       And Click the Search button
       Then Matching book record appears for the given criteria
       
