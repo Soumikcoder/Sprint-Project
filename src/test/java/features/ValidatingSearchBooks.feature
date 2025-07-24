@@ -19,7 +19,7 @@ Feature: Search Functionality Check
       Given Navigate to the search page
       When Enter valid but mismatched author
       And Click the Search button
-      Then Nothing is displayed
+      Then No Book Record is displayed
       
    @MismatchedSubject
    Scenario: Validating Search with mismatched subject
