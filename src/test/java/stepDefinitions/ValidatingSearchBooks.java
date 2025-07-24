@@ -1,16 +1,27 @@
 package stepDefinitions;
 
+import org.openqa.selenium.WebDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.BasePage;
+import pages.SearchPage;
+import setup.DriverSetup;
 
 public class ValidatingSearchBooks {
+	
+	private static WebDriver driver;
+	
+	public static void driverSetup() {
+		driver = DriverSetup.getDriver();
+	}
 	
 	@Given("Navigate to the search page")
 	public void navigate_to_the_search_page() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
+		SearchPage searchPageObj = new SearchPage(driver);
+		searchPageObj.openSearchTab();
 	}
 
 	@When("Enter valid but mismatched author")
