@@ -8,7 +8,7 @@ Feature: Search Functionality Check
       Then Matching book record appears for the given criteria
       
    @MandatoryFields
-   Scenario: Validate mandatory fields
+   Scenario: Validating mandatory fields
       Given Navigate to the search page
       When Leave some or all of the fields blank
       And Click the Search button
@@ -19,7 +19,7 @@ Feature: Search Functionality Check
       Given Navigate to the search page
       When Enter valid but mismatched author
       And Click the Search button
-      Then Nothing is displayed 
+      Then Nothing is displayed
       
    @MismatchedSubject
    Scenario: Validating Search with mismatched subject
