@@ -17,13 +17,27 @@ import setup.AppPropProvider;
 import setup.DriverSetup;
 
 public class Hooks {
-	public WebDriver driver;
-		
+	private WebDriver driver;
+	private HomePage homepage;
+	
+	public WebDriver getDriver() {
+		return driver;
+	}
+	public void setDriver(WebDriver driver) {
+		this.driver = driver;
+	}
+	public HomePage getHomepage() {
+		return homepage;
+	}
+	public void setHomepage(HomePage homepage) {
+		this.homepage = homepage;
+	}
 	@Before
 	public void setup() {
 		AppPropProvider.initialize();
 		driver=DriverSetup.getDriver();
 		driver.get(AppPropProvider.get("webUrl"));
+		homepage=new HomePage(driver);
 	}
 	@AfterStep
 	public void takeScreenShot(Scenario scenario) {

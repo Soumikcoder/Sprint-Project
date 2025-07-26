@@ -4,15 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import hooks.Hooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.HomePage;
 import pages.SearchPage;
 import setup.DriverSetup;
 
 public class ValidatingSearchBooks {
 	
-	private static WebDriver driver;
 	
 	@FindBy(id="authorName")
 	private WebElement authorName;
@@ -26,8 +27,13 @@ public class ValidatingSearchBooks {
 	private WebElement ageGroup;
 	
 	
-	public static void driverSetup() {
-		driver = DriverSetup.getDriver();
+	WebDriver driver;
+	HomePage homePage;
+	   
+
+	public ValidatingSearchBooks(Hooks hooks) {
+		this.driver = hooks.getDriver();
+		this.homePage = hooks.getHomepage();
 	}
 	
 	@Given("Navigate to the search page")
