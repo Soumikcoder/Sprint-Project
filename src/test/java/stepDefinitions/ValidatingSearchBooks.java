@@ -14,6 +14,7 @@ import setup.DriverSetup;
 
 public class ValidatingSearchBooks {
 	
+<<<<<<< HEAD
 	
 	@FindBy(id="authorName")
 	private WebElement authorName;
@@ -26,6 +27,9 @@ public class ValidatingSearchBooks {
 	@FindBy(id="formatError")
 	private WebElement ageGroup;
 	
+=======
+	private static WebDriver driver;	
+>>>>>>> stash
 	
 	WebDriver driver;
 	HomePage homePage;
