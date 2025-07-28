@@ -1,19 +1,20 @@
 package stepDefinitions;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 
 import hooks.Hooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.*;
+import junit.framework.Assert;
 import pages.HomePage;
 import pages.LibraryCardPage;
-import pages.MembershipPage;
 import utils.DataReader;
-
-import java.io.IOException;
-import java.util.*;
 
 public class LibraryCardEntry {
 	
@@ -39,7 +40,7 @@ public void navigate_to_the_url_library_card_entry() {
 @Then("Enter the all the valid data and verify it {string}")
 public void enter_the_all_the_valid_data(String rows) throws InterruptedException {
 	try {
-		datamap=DataReader.data("C:\\Users\\91920\\git\\Sprint-Project\\src\\test\\resources\\LibraryCardData.xlsx", "Sheet1");
+		datamap=DataReader.data(System.getProperty("user.dir") + File.separator + "src" + File.separator + "test" + File.separator + "resources" + File.separator + "LibraryCardData.xlsx", "Sheet1");
 	} 
     catch (IOException e) 
     {
@@ -112,6 +113,23 @@ public void enter_the_all_the_valid_data(String rows) throws InterruptedExceptio
 
     
 }
+
+		@When("The user left the field empty and enters the details aand click on submit")
+		public void the_user_left_the_field_empty_and_enters_the_details_aand_click_on_submit() {
+		    // Write code here that turns the phrase above into concrete actions
+			 
+			   
+			   
+			   
+
+			    lcp.clickSubmit();
+		}
+
+		@Then("verify the details are not submitted")
+		public void verify_the_details_are_not_submitted() {
+		    // Write code here that turns the phrase above into concrete actions
+		   Assert.assertEquals(lcp.isFormSubmit(), false);
+		}
 
 
 	
