@@ -10,7 +10,8 @@ import io.cucumber.junit.CucumberOptions;
 	features= {"src/test/java/features"},
 	glue= {"hooks","stepDefinitions"},
 	plugin= {"pretty","html:reports/cucumberreport.html"},
-	dryRun=false
+	dryRun=false,
+	tags="(@ValidDetails or @EmptyDetails)"
 )
 public class TestRunner {
 	

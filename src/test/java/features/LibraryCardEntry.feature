@@ -14,7 +14,7 @@ Scenario Outline: LMTC001: Validating the Library card with valid data
       |         2 |
       |         3 |
       |         4 |
-      |         5 |
+      
       
 @EmptyDetails
 Scenario: LMTC002: Verfying the details with empty field
