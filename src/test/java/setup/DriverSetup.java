@@ -7,9 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 //TODO: Different Browser using prop file
 //TODO: 
 public class DriverSetup {
-	private static WebDriver driver;
 	public static WebDriver getDriver() {
-		if(driver == null) {
+		WebDriver driver=null;
 			String browser=AppPropProvider.get("browser");
 			switch(browser) {
 				case "firefox":
@@ -22,7 +21,7 @@ public class DriverSetup {
 					driver=new EdgeDriver();
 					break;
 			}
-		}
+		
 		return driver;
 	}
 }
