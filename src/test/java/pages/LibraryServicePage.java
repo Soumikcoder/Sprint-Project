@@ -183,9 +183,38 @@ public class LibraryServicePage {
 
     @FindBy(id = "QuerySubmit")
     WebElement submitButton;
+    
+    /*---------------------call--------------------*/
+    @FindBy(xpath = "//input[@id='medium_call']")
+    WebElement callRadio;
 
-    //@FindBy(id = "mediummailoutput")
-    //String resultMessage;
+    // Call message display
+    @FindBy(xpath = "//label[normalize-space()='Call our Librarian at 982-098-8900']")
+    WebElement callMessage;
+
+    @FindBy(xpath = "//label[normalize-space()='Time : 10am - 3pm']")
+    WebElement callTime;
+    
+    /*---------------------chat--------------------*/
+    @FindBy(xpath = "//input[@id='medium_chat']")
+    WebElement chatRadio;
+
+    @FindBy(id = "chatname")
+    WebElement nameInput;
+
+    @FindBy(id = "yourphone")
+    WebElement phoneInput;
+
+    @FindBy(id = "querychat")
+    WebElement chatQueryInput;
+
+    @FindBy(id = "QuerySubmit")
+    WebElement chatSubmitButton;
+
+   
+
+    @FindBy(id = "yourphoneError")
+    WebElement chatPhoneErrorMessage;
 
     
     public void openAndSelectEmailOption() {
@@ -216,27 +245,7 @@ public class LibraryServicePage {
              e.printStackTrace();
          }
     }
-    
-   /* public void selectEmailOption() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(emailRadio));
-        emailRadio.click();
-    }*/
-   /* public void selectEmailOptionJS() {
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // Click the Services tab
-        wait.until(ExpectedConditions.elementToBeClickable(serviceTab));
-        serviceTab.click();
-
-        // Wait for the Email radio button and click using JS
-        wait.until(ExpectedConditions.visibilityOf(emailRadio));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", emailRadio);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", emailRadio);
-    }*/
-    
-    
-   
 
    // Enter email address
     public void enterEmail(String email) {
@@ -269,10 +278,92 @@ public class LibraryServicePage {
     public void clickSubmit() {
         submitButton.click();
     }
+    
+    
+    //----------------------CALL METHODS---------------------
+    public void openAndSelectCallOption() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-    // Get result text
-    //public  String getResultMessageElement() {
-        //return resultMessage;
-    //}
+        // Click Services Tab
+        wait.until(ExpectedConditions.elementToBeClickable(serviceTab));
+        serviceTab.click();
 
+        // Wait for the Call option and click
+        wait.until(ExpectedConditions.elementToBeClickable(callRadio));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", callRadio);
+    }
+
+    // Method to get call message
+    public String getCallMessage() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(callMessage));
+        return callMessage.getText().trim();
+    }
+
+    // Method to get call time
+    public String getCallTime() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(callTime));
+        return callTime.getText().trim();
+    }
+    // ==================== CHAT METHODS =====================
+    public void openAndSelectChatOption() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.elementToBeClickable(serviceTab));
+        serviceTab.click();
+
+        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+
+        wait.until(ExpectedConditions.elementToBeClickable(chatRadio));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", chatRadio);
+
+        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+    }
+
+    public void enterName(String name) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(nameInput));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", nameInput);
+        nameInput.clear();
+        nameInput.sendKeys(name);
+    }
+
+    public void enterPhone(String phone) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(phoneInput));
+        phoneInput.clear();
+        phoneInput.sendKeys(phone);
+    }
+
+    public void enterChatQuery(String query1) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(chatQueryInput));
+        chatQueryInput.clear();
+        chatQueryInput.sendKeys(query1);
+    }
+
+    public void clickChatSubmit() {
+        chatSubmitButton.click();
+    }
+    private void sleep(long ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // =================== MESSAGE FETCHERS ===================
+    public String getChatSuccessMessage() {
+        return new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.id("mediumchatoutput"))).getText().trim();
+    }
+
+    public String getChatErrorMessage() {
+        return new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.id("phonechatError"))).getText().trim();
+    }
+
+    
 }

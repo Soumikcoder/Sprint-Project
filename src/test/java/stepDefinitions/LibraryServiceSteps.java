@@ -156,10 +156,6 @@ public class LibraryServiceSteps {
     	    }
     	}
 
-    
-
-   
-
     @And("enters email {string}")
     public void enters_email(String rowIndexStr) {
         int rowIndex = Integer.parseInt(rowIndexStr);
@@ -210,24 +206,109 @@ public class LibraryServiceSteps {
             Assert.fail("Message validation failed: " + e.getMessage());
         }
     }
+    //=========================CALL STEPS===========================
+    @Given("the user opens the call option")
+    public void the_user_opens_the_call_option() {
+        page.openAndSelectCallOption();
+    }
+
+    @Then("verify the call message should be {string} and {string}")
+    public void verify_the_call_message_should_be_and(String expectedCallMessage, String expectedTime) {
+        String actualCallMessage = page.getCallMessage();
+        String actualTime = page.getCallTime();
+
+        System.out.println("Expected Call Message: " + expectedCallMessage);
+        System.out.println("Actual Call Message: " + actualCallMessage);
+
+        System.out.println("Expected Time: " + expectedTime);
+        System.out.println("Actual Time: " + actualTime);
+
+        Assert.assertEquals(actualCallMessage, expectedCallMessage, "Call message mismatch!");
+        Assert.assertEquals(actualTime, expectedTime, "Call time mismatch!");
+    }
 
 
+    // ========================= CHAT STEPS =========================
+    @Given("the user opens the chat option")
+    public void the_user_opens_the_chat_option() {
+        page.openAndSelectChatOption();
+    }
+    @When("the user enters chat name {string}")
+    public void the_user_enters_name(String name) {
+        page.enterName(name);
+    }
 
+    @When("the user enters chat phone {string}")
+    public void the_user_enters_phone(String phone) {
+        page.enterPhone(phone);
+    }
+
+    @When("the user enters chat query {string}")
+    public void the_user_enters_chat_query(String query) {
+        page.enterChatQuery(query);
+    }
+
+    @And("the user clicks on Submit for chat")
+    public void the_user_clicks_on_submit() {
+        page.clickChatSubmit(); // Calls the chat submit button
+    }
+
+    //@Then("a success message should be displayed for chat")
+    /*public void a_success_message_should_be_displayed_for_chat() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mediumchatoutput")));
+        WebElement chatsuccessMessage = null;
+		Assert.assertTrue(chatsuccessMessage.isDisplayed(), "Chat success message not displayed");
+    }*/
+    @Then("verify the chat result is {string} and the message should be {string}")
+    public void verify_the_chat_result_is_and_the_message_should_be(String expectedResult, String expectedMessage) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        String actualMessage = "";
+
+        try {
+            if (expectedResult.equalsIgnoreCase("Success")) {
+                // Success message for chat
+                WebElement successElement = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(By.id("mediumchatoutput"))
+                );
+                actualMessage = successElement.getText().trim();
+            } 
+            else if (expectedResult.equalsIgnoreCase("Error")) {
+                try {
+                    // Try to get error element
+                    WebElement errorElement = wait.until(
+                        ExpectedConditions.visibilityOfElementLocated(By.id("phonechatError"))
+                    );
+                    actualMessage = errorElement.getText().trim();
+                } catch (Exception e) {
+                    // If error message is not found, fallback to success element
+                    WebElement successElement = driver.findElement(By.id("mediumchatoutput"));
+                    actualMessage = successElement.getText().trim();
+                }
+            }
+
+            if (actualMessage.isEmpty()) {
+                actualMessage = "No message displayed";
+            }
+
+            System.out.println("Expected: " + expectedMessage);
+            System.out.println("Actual: " + actualMessage);
+
+            // Compare ignoring case
+            Assert.assertTrue(
+                actualMessage.equalsIgnoreCase(expectedMessage),
+                "Expected message: " + expectedMessage + " but found: " + actualMessage
+            );
+
+        } catch (Exception e) {
+            Assert.fail("Message validation failed: " + e.getMessage());
+        }
+    }
+
+   
 }
+
+
     
 
-   /* @And("the message should be {string}")
-    public void the_message_should_be(String expectedMessage) {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-
-    // Wait until the message element is visible
-    WebElement messageElement = wait.until(
-        ExpectedConditions.visibilityOfElementLocated(By.id("mediummailoutput"))
-    );
-
-    String actualMessage = messageElement.getText().trim();
-    System.out.println("Actual message: " + actualMessage);
-
-    Assert.assertEquals(actualMessage, expectedMessage, "Expected message mismatch.");
-    }*/
-
+ 

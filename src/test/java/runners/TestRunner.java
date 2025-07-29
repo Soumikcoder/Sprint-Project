@@ -11,7 +11,6 @@ import io.cucumber.junit.CucumberOptions;
 	glue= {"hooks","stepDefinitions"},
 	plugin= {"pretty","html:reports/cucumberreport.html"},
 	dryRun=false
-	//tags="@EmailTests"
 )
 public class TestRunner {
 	
