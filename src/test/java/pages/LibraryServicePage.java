@@ -184,8 +184,8 @@ public class LibraryServicePage {
     @FindBy(id = "QuerySubmit")
     WebElement submitButton;
 
-    @FindBy(id = "mediummailoutput")
-    WebElement resultMessage;
+    //@FindBy(id = "mediummailoutput")
+    //String resultMessage;
 
     
     public void openAndSelectEmailOption() {
@@ -271,8 +271,8 @@ public class LibraryServicePage {
     }
 
     // Get result text
-    public WebElement getResultMessageElement() {
-        return resultMessage;
-    }
+    //public  String getResultMessageElement() {
+        //return resultMessage;
+    //}
 
 }

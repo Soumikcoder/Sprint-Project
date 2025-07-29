@@ -105,8 +105,11 @@ public class LibraryServiceSteps {
 package stepDefinitions;
 
 import java.time.Duration;
+import java.util.concurrent.TimeoutException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -125,8 +128,9 @@ public class LibraryServiceSteps {
     HomePage homePage;
     LibraryServicePage libraryServicesPage;
     LibraryServicePage page;
+    
     ExcelReader reader = new ExcelReader();
-    String basePath = System.getProperty("user.dir") + "/src/test/resources/testdata/LibraryServiceData.xlsx";
+    String basePath = System.getProperty("user.dir") + "/src/test/resources/testdata/LibraryServices.xlsx";
     String actualMessage = "";
 
     // Constructor to get driver and page objects from Hooks
@@ -175,21 +179,55 @@ public class LibraryServiceSteps {
         page.clickSubmit();
     }
 
-    @Then("verify the result is {string}")
-    public void verify_the_result_is(String expectedStatus) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        actualMessage = wait.until(ExpectedConditions.visibilityOf(page.getResultMessageElement())).getText().trim();
+    @Then("verify the result is {string} and the message should be {string}")
+    public void verify_the_result_is_and_the_message_should_be(String expectedResult, String expectedMessage) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        String actualMessage = "";
 
-        if (expectedStatus.equalsIgnoreCase("Success")) {
-            Assert.assertTrue(!actualMessage.isEmpty(), "Expected success message but got empty.");
-        } else if (expectedStatus.equalsIgnoreCase("Error")) {
-            Assert.assertTrue(actualMessage.toLowerCase().contains("error") || actualMessage.isEmpty(),
-                    "Expected error message but got: " + actualMessage);
+        try {
+            if (expectedResult.equalsIgnoreCase("Success")) {
+                WebElement successElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mediummailoutput")));
+                actualMessage = successElement.getText().trim();
+            } 
+            else if (expectedResult.equalsIgnoreCase("Error")) {
+                // For errors like "Please enter your query"
+                WebElement errorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("queryemailError")));
+                actualMessage = errorElement.getText().trim();
+            }
+
+            // If no message is found, handle this
+            if (actualMessage.isEmpty()) {
+                actualMessage = "No message displayed";
+            }
+
+            System.out.println("Expected: " + expectedMessage);
+            System.out.println("Actual: " + actualMessage);
+
+            Assert.assertEquals(actualMessage, expectedMessage,
+                "Expected message: " + expectedMessage + " but found: " + actualMessage);
+
+        } catch (Exception e) {
+            Assert.fail("Message validation failed: " + e.getMessage());
         }
     }
 
-    @And("the message should be {string}")
-    public void the_message_should_be(String expectedMessage) {
-        Assert.assertEquals(actualMessage, expectedMessage, "Expected message mismatch.");
-    }
+
+
 }
+    
+
+   /* @And("the message should be {string}")
+    public void the_message_should_be(String expectedMessage) {
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+    // Wait until the message element is visible
+    WebElement messageElement = wait.until(
+        ExpectedConditions.visibilityOfElementLocated(By.id("mediummailoutput"))
+    );
+
+    String actualMessage = messageElement.getText().trim();
+    System.out.println("Actual message: " + actualMessage);
+
+    Assert.assertEquals(actualMessage, expectedMessage, "Expected message mismatch.");
+    }*/
+
