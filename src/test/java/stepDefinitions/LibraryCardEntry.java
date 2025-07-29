@@ -117,16 +117,7 @@ public void enter_the_all_the_valid_data(String rows) throws InterruptedExceptio
     
 }
 
-		@When("The user left the field empty and enters the details aand click on submit")
-		public void the_user_left_the_field_empty_and_enters_the_details_aand_click_on_submit() {
-		    // Write code here that turns the phrase above into concrete actions
-			 
-			   
-			   
-			   
-
-			    lcp.clickSubmit();
-		}
+	
 
 		@Then("verify the details are not submitted")
 		public void verify_the_details_are_not_submitted() {
