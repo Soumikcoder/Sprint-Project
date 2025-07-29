@@ -3,7 +3,7 @@ Feature: Library Services Form Submission Testing
 As a user I want to interact with Library Services options(Email, Call, Chat)
 So that I can submit my queries successfully
 
-Scenario Outline: LMSETC001 - Submitting Email option with different inputs
+Scenario Outline:  Submitting Email option with different inputs
   Given the user navigates to the Library Services form
   When the user selects "Email" option
   And enters email "<row_index>"
