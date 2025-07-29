@@ -1,11 +1,12 @@
 package pages;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class SearchPage extends HomePage {
+public class SearchPage extends BasePage {
 	
 	@FindBy(id="authorName")
 	private WebElement authorName;
@@ -45,33 +46,46 @@ public class SearchPage extends HomePage {
 	
 	public void setAuthorName(String name)
 	{
-		authorName.sendKeys(name);
+		if(name!=null)
+			authorName.sendKeys(name);
 	}
 	
 	public void setSubject(String subject)
 	{
-		bookSubject.sendKeys(subject);
+		if(subject!=null)
+			bookSubject.sendKeys(subject);
 	}
 	
 	public void setEdition(String edition)
 	{
-		bookEdition.sendKeys(edition);
+		if(edition!=null)
+		{
+			Select select = new Select(bookEdition);
+			select.selectByVisibleText(edition);
+		}
 	}
 	
 	public void setBookFormat(String format)
 	{
-		Select select = new Select(bookFormat);
-		select.selectByVisibleText(format);
+		if(format!=null)
+		{
+			Select select = new Select(bookFormat);
+			select.selectByVisibleText(format);
+		}
 	}
 	
 	public void setAgeGroup(String age)
 	{
-		if(age.equalsIgnoreCase("kids"))
-			kidsAgeGroup.click();
-		else if(age.equalsIgnoreCase("teen"))
-			teenAgeGroup.click();
-		else if(age.equalsIgnoreCase("adult"))
-			adultAgeGroup.click();
+        if (age != null) {
+            switch (age.toLowerCase()) {
+                case "kids":
+                    kidsAgeGroup.click(); break;
+                case "teen":
+                    teenAgeGroup.click(); break;
+                case "adult":
+                    adultAgeGroup.click(); break;
+            }
+        }
 	}
 	
 	public void clickSubmitButton()
@@ -81,41 +95,44 @@ public class SearchPage extends HomePage {
 	
 	public String getResult()
 	{
-		return result.getText();
+		if(!result.isDisplayed())
+			return null;
+        return visibilityOfElement(result);
 	}
 	
 	public String getAuthorNameError()
 	{
-		if(authorNameError.isDisplayed())
-			return authorNameError.getText();
-		return null;
+		return visibilityOfElement(authorNameError);
 	}
 	
 	public String getSubjectError()
 	{
-		if(subjectError.isDisplayed())
-			return subjectError.getText();
-		return null;
+		return visibilityOfElement(subjectError);
 	}
 	
 	public String getEditionError()
 	{
-		if(editionError.isDisplayed())
-			return editionError.getText();
-		return null;
+		return visibilityOfElement(editionError);
 	}
 	
 	public String getFormatError()
 	{
-		if(formatError.isDisplayed())
-			return formatError.getText();
-		return null;
+		return visibilityOfElement(formatError);
 	}
 	
 	public String getAgeGroupError()
 	{
-		if(ageGroupError.isDisplayed())
-			return ageGroupError.getText();
+		return visibilityOfElement(ageGroupError);
+	}
+	
+	public static String visibilityOfElement(WebElement element)
+	{
+		try {
+			if(element.isDisplayed())
+				return element.getText();
+		}catch(NoSuchElementException e) {
+			return null;
+		}
 		return null;
 	}
 }
