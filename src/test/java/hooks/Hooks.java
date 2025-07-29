@@ -17,10 +17,10 @@ import setup.AppPropProvider;
 import setup.DriverSetup;
 
 public class Hooks {
-	private WebDriver driver;
+	private static WebDriver driver;
 	private HomePage homepage;
 	
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return driver;
 	}
 	public void setDriver(WebDriver driver) {
