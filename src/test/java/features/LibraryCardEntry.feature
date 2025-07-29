@@ -19,7 +19,7 @@ Scenario Outline: LMTC001: Validating the Library card with valid data
 @EmptyDetails
 Scenario: LMTC002: Verfying the details with empty field
    Given Navigate to the url library card entry
-   When  The user left the field empty and enters the details aand click on submit
+   When  The user left the field empty and enters the details and click on submit
    Then  verify the details are not submitted
    
 @InvalidEmail
