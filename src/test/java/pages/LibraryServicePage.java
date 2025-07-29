@@ -271,7 +271,8 @@ public class LibraryServicePage {
     }
 
     // Get result text
-    public String getResultMessage() {
-        return resultMessage.getText().trim();
+    public WebElement getResultMessageElement() {
+        return resultMessage;
     }
+
 }

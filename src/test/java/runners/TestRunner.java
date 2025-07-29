@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 	glue= {"hooks","stepDefinitions"},
 	plugin= {"pretty","html:reports/cucumberreport.html"},
 	dryRun=false,
-	tags="(@ValidDetails or @EmptyDetails or @InvalidEmail or @InvalidAge or @InvalidPhoneNumber)"
+	tags="@EmailTests"
 )
 public class TestRunner {
 	

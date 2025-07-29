@@ -123,7 +123,7 @@ public class LibraryServiceSteps {
 
 	WebDriver driver;
     HomePage homePage;
-    LibraryServicePage libraryCardServicesPage;
+    LibraryServicePage libraryServicesPage;
     LibraryServicePage page;
     ExcelReader reader = new ExcelReader();
     String basePath = System.getProperty("user.dir") + "/src/test/resources/testdata/LibraryServiceData.xlsx";
@@ -133,7 +133,7 @@ public class LibraryServiceSteps {
     public LibraryServiceSteps(Hooks hooks) {
         this.driver = Hooks.getDriver();
         this.homePage = hooks.getHomepage();
-        this.libraryCardServicesPage = new LibraryServicePage(driver);
+        this.libraryServicesPage = new LibraryServicePage(driver);
         this.page = new LibraryServicePage(driver);
     }
 
@@ -143,9 +143,13 @@ public class LibraryServiceSteps {
     }
 
     
-    	@When("the user selects Email option")
-    	public void the_user_selects_email_option() {
-    	    page.openAndSelectEmailOption(); // Handles service tab + email radio click
+    	@When("the user selects {string} option")
+    	public void the_user_selects_option(String option) throws InterruptedException {
+    	    page.openAndSelectEmailOption();
+    	    Thread.sleep(3000); // Wait after clicking services tab
+    	    if (option.equalsIgnoreCase("Email")) {
+    	        page.openAndSelectEmailOption();
+    	    }
     	}
 
     
@@ -173,11 +177,14 @@ public class LibraryServiceSteps {
 
     @Then("verify the result is {string}")
     public void verify_the_result_is(String expectedStatus) {
-        actualMessage = page.getResultMessage();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        actualMessage = wait.until(ExpectedConditions.visibilityOf(page.getResultMessageElement())).getText().trim();
+
         if (expectedStatus.equalsIgnoreCase("Success")) {
             Assert.assertTrue(!actualMessage.isEmpty(), "Expected success message but got empty.");
         } else if (expectedStatus.equalsIgnoreCase("Error")) {
-            Assert.assertTrue(actualMessage.toLowerCase().contains("error") || actualMessage.isEmpty(), "Expected error message but got: " + actualMessage);
+            Assert.assertTrue(actualMessage.toLowerCase().contains("error") || actualMessage.isEmpty(),
+                    "Expected error message but got: " + actualMessage);
         }
     }
 
