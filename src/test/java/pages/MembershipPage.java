@@ -1,6 +1,7 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -21,19 +22,21 @@ public class MembershipPage extends BasePage{
 	WebElement book;
 	@FindBy(id="div1")
 	WebElement dropBox;
+	
 	@FindBy(id="Gold")
 	WebElement goldMembershipOption;
 	@FindBy(id="Platinum")
 	WebElement platinumMembershipOption;
-	@FindBy(id="libcardNumberPtm")
-	WebElement libcardNumberTextBoxPtm;
-	@FindBy(id="libcardNumberGold")
-	WebElement libcardNumberTextBoxGold;
+	
+	@FindBy(xpath="//input[contains(@id,'libcardNumber')]")
+	List<WebElement> libcardNumberTextBoxes;
+	
 	@FindBy(id="memberSubmit")
 	WebElement submitBtn;
 	@FindBy(id="memberoutput")
 	WebElement result;
-	
+	@FindBy(xpath="//label[contains(@id,'Error')]")
+	List<WebElement> errors;
 	boolean goldMembership;
 	
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
@@ -58,15 +61,28 @@ public class MembershipPage extends BasePage{
 		
 	}
 	public void setLibrarycardNumber(String number) {
-		WebElement libcardNumberTextBox=(goldMembership?libcardNumberTextBoxGold:libcardNumberTextBoxPtm);
-		jse.executeScript("arguments[0].scrollIntoView()",libcardNumberTextBox);
-		libcardNumberTextBox.sendKeys(number);
+		for(WebElement libcardNumberTextBox:libcardNumberTextBoxes) {
+			if(libcardNumberTextBox.isDisplayed()) {
+				jse.executeScript("arguments[0].scrollIntoView()",libcardNumberTextBox);
+				libcardNumberTextBox.sendKeys(number);
+			}
+		}
+		
 	}
 	public void submit() {
 		jse.executeScript("arguments[0].scrollIntoView()",submitBtn);
 		submitBtn.click();
 	}
 	public String getMessage() {
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true)", result);
 		return result.getText();
+	}
+	public String getErrorMessage() {
+		for(WebElement error:errors) {
+			if(error.isDisplayed()) {
+				return error.getText();
+			}
+		}
+		return null;
 	}
 }
