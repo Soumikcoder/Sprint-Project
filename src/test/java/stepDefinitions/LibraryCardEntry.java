@@ -27,6 +27,15 @@ public class LibraryCardEntry {
   public LibraryCardEntry(Hooks hooks) {
 		this.driver = hooks.getDriver();
 		this.homePage = hooks.getHomepage();
+		if(datamap==null) {
+			try {
+				datamap=DataReader.data(System.getProperty("user.dir") + File.separator + "src" + File.separator + "test" + File.separator + "resources" + File.separator + "LibraryCardData.xlsx", "Sheet1");
+			} 
+		    catch (IOException e) 
+		    {
+				e.printStackTrace();
+			}
+		}
 		
 	}
 
@@ -37,15 +46,9 @@ public void navigate_to_the_url_library_card_entry() {
 	  
 }
 
-@Then("Enter the all the valid data and verify it {string}")
+@Then("Enter the all the data and verify it {string}")
 public void enter_the_all_the_valid_data(String rows) throws InterruptedException {
-	try {
-		datamap=DataReader.data(System.getProperty("user.dir") + File.separator + "src" + File.separator + "test" + File.separator + "resources" + File.separator + "LibraryCardData.xlsx", "Sheet1");
-	} 
-    catch (IOException e) 
-    {
-		e.printStackTrace();
-	}
+	
 
     int index=Integer.parseInt(rows)-1;
     String first= datamap.get(index).get("first");

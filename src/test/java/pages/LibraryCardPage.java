@@ -73,7 +73,7 @@ public void setPhone(String phone) {
 public void setWork(String work,String OrgName) throws InterruptedException {
          if(work.equalsIgnoreCase("student")) {
         	 Student.click();
-        	 Thread.sleep(5000);
+        	 Thread.sleep(1000);
         	 school.sendKeys(OrgName);
          }
          else 
@@ -86,8 +86,7 @@ public void setWork(String work,String OrgName) throws InterruptedException {
 
 public void setCardType(String cardType) {
     Select select = new Select(cardTypeDropdown);
-    if(cardType.equalsIgnoreCase("apply"))
-    select.selectByVisibleText("Apply New Card");
+      select.selectByVisibleText(cardType);
 }
 
 public void clickSubmit() {
