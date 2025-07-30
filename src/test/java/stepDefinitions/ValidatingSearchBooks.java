@@ -11,8 +11,8 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-//import junit.framework.Assert;
-import org.testng.Assert;
+import junit.framework.Assert;
+//import org.testng.Assert;
 import pages.HomePage;
 import pages.SearchPage;
 import setup.DriverSetup;
@@ -26,7 +26,7 @@ public class ValidatingSearchBooks {
 	SearchPage searchPageObj;
 
 	public ValidatingSearchBooks(Hooks hooks) {
-		driver = Hooks.getDriver();
+		driver = hooks.getDriver();
 		this.homePage = hooks.getHomepage();
 	}
 	

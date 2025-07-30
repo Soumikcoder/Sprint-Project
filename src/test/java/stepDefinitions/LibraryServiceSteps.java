@@ -9,7 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+//import org.testng.Assert;
+import junit.framework.Assert;
 
 import hooks.Hooks;
 import io.cucumber.java.en.*;
@@ -32,7 +33,7 @@ public class LibraryServiceSteps {
 
     // Constructor to get driver and page objects from Hooks
     public LibraryServiceSteps(Hooks hooks) {
-        this.driver = Hooks.getDriver();
+        this.driver = hooks.getDriver();
         this.homePage = hooks.getHomepage();
         this.libraryServicesPage = new LibraryServicePage(driver);
         this.page = new LibraryServicePage(driver);
@@ -187,8 +188,7 @@ public class LibraryServiceSteps {
 
             // Compare ignoring case
             Assert.assertTrue(
-                actualMessage.equalsIgnoreCase(expectedMessage),
-                "Expected message: " + expectedMessage + " but found: " + actualMessage
+                actualMessage.equalsIgnoreCase(expectedMessage)
             );
 
         } catch (Exception e) {
