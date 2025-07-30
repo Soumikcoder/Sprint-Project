@@ -1,0 +1,3412 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Extent Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">BDD Test Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 30, 2025 12:08:30 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@ChatTests(LMSETC006)</a><a class="dropdown-item" href="#">@InvalidAuthorName</a><a class="dropdown-item" href="#">@InvalidSubject</a><a class="dropdown-item" href="#">@MismatchedSubject</a><a class="dropdown-item" href="#">@ChatTests(LMSETC007)</a><a class="dropdown-item" href="#">@CallTests(LMSETC004-005)</a><a class="dropdown-item" href="#">@EmailTests(LMSETC001-003)</a><a class="dropdown-item" href="#">@EmptyNumber</a><a class="dropdown-item" href="#">@ValidData</a><a class="dropdown-item" href="#">@MandatoryFields</a><a class="dropdown-item" href="#">@MismatchedAuthor</a><a class="dropdown-item" href="#">@test</a><a class="dropdown-item" href="#">@EmptyDetails</a><a class="dropdown-item" href="#">@ValidDetails</a><a class="dropdown-item" href="#">@InvalidNumber</a><a class="dropdown-item" href="#">@ValidNumber</a><a class="dropdown-item" href="#">@CaseInSensitiveSearch</a><a class="dropdown-item" href="#">@InvalidAge</a><a class="dropdown-item" href="#">@InvalidEmail</a><a class="dropdown-item" href="#">@InvalidPhoneNumber</a><a class="dropdown-item" href="#">@ServiceTests</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Apply or Renew the Library card</p>
+            <p class="text-sm">
+              <span>12:08:31 pm</span> / <span>00:02:10:532</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Apply or Renew the Library card</h5>
+<span class='badge badge-success'>07.30.2025 12:08:31 pm</span>
+<span class='badge badge-danger'>07.30.2025 12:10:42 pm</span>
+<span class='badge badge-default'>00:02:10:532</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>LMTC001: Validating the Library card with valid data</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>LMTC001: Validating the Library card with valid data</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Enter the all the data and verify it "1"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>LMTC001: Validating the Library card with valid data</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Enter the all the data and verify it "2"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="17"><span class="badge log pass-bg mr-2">Pass</span>LMTC001: Validating the Library card with valid data</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Enter the all the data and verify it "3"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="24"><span class="badge log pass-bg mr-2">Pass</span>LMTC001: Validating the Library card with valid data</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Enter the all the data and verify it "4"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="31"><span class="badge log pass-bg mr-2">Pass</span>LMTC002: Verfying the details with empty field</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.LibraryCardEntry.navigate_to_the_url_library_card_entry()">
+                <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryCardEntry.the_user_left_the_field_empty_and_enters_the_details_and_click_on_submit()">
+                <span>When The user left the field empty and enters the details and click on submit</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryCardEntry.verify_the_details_are_not_submitted()">
+                <span>Then verify the details are not submitted</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="40"><span class="badge log fail-bg mr-2">Fail</span>LMTC004: Verifying Invalid Email</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="41"><span class="badge log fail-bg mr-2">Fail</span>LMTC004: Verifying Invalid Email</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "5"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "5"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:28)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC004: Verifying Invalid Email
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded1.png' src="../reports/Screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="48"><span class="badge log fail-bg mr-2">Fail</span>LMTC004: Verifying Invalid Email</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "6"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "6"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:28)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC004: Verifying Invalid Email
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded2.png' src="../reports/Screenshots/embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="55"><span class="badge log fail-bg mr-2">Fail</span>LMTC004: Verifying Invalid Email</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "7"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "7"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:28)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC004: Verifying Invalid Email
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded3.png' src="../reports/Screenshots/embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="62"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Age Format</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="63"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Age Format</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "8"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "8"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:39)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC005:Verifying Invalid Age Format
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded4.png' src="../reports/Screenshots/embedded4.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="70"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Age Format</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "9"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "9"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:39)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC005:Verifying Invalid Age Format
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded5.png' src="../reports/Screenshots/embedded5.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="77"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Age Format</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "10"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "10"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:39)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC005:Verifying Invalid Age Format
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded6.png' src="../reports/Screenshots/embedded6.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="84"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Age Format</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "11"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "11"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:39)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC005:Verifying Invalid Age Format
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded7.png' src="../reports/Screenshots/embedded7.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="91"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Phone Number  Format</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="92"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Phone Number  Format</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "12"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "12"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:50)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC005:Verifying Invalid Phone Number  Format
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded8.png' src="../reports/Screenshots/embedded8.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="99"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Phone Number  Format</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "13"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "13"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:50)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC005:Verifying Invalid Phone Number  Format
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded9.png' src="../reports/Screenshots/embedded9.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="106"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Phone Number  Format</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "14"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "14"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:50)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC005:Verifying Invalid Phone Number  Format
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded10.png' src="../reports/Screenshots/embedded10.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="113"><span class="badge log fail-bg mr-2">Fail</span>LMTC005:Verifying Invalid Phone Number  Format</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Navigate to the url library card entry</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Enter the all the data and verify it "15"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryCardEntry.enter_the_all_the_valid_data(LibraryCardEntry.java:89)
+	at ✽.Enter the all the data and verify it "15"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardEntry.feature:50)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMTC005:Verifying Invalid Phone Number  Format
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded11.png' src="../reports/Screenshots/embedded11.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="120"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Library Services Form Submission Testing</p>
+            <p class="text-sm">
+              <span>12:10:42 pm</span> / <span>00:01:36:771</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Library Services Form Submission Testing</h5>
+<span class='badge badge-success'>07.30.2025 12:10:42 pm</span>
+<span class='badge badge-danger'>07.30.2025 12:12:18 pm</span>
+<span class='badge badge-default'>00:01:36:771</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=120</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">As a user I want to interact with Library Services options(Email, Call, Chat)
+So that I can submit my queries successfully</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="121"><span class="badge log fail-bg mr-2">Fail</span>Submitting Email option with different inputs</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="122"><span class="badge log fail-bg mr-2">Fail</span>Submitting Email option with different inputs</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user navigates to the Library Services form</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects "Email" option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters email "1"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters query "1"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks Submit</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then verify the result is "Success" and the message should be "Mail Sent Successfully"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.ComparisonFailure: Mail Sent Successfully expected:<[]Mail Sent Successful...> but was:<[Expected message: Mail Sent Successfully but found: ]Mail Sent Successful...>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at stepDefinitions.LibraryServiceSteps.verify_the_result_is_and_the_message_should_be(LibraryServiceSteps.java:100)
+	at ✽.verify the result is "Success" and the message should be "Mail Sent Successfully"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardServices.feature:13)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>Submitting Email option with different inputs
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded12.png' src="../reports/Screenshots/embedded12.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="137"><span class="badge log fail-bg mr-2">Fail</span>Submitting Email option with different inputs</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user navigates to the Library Services form</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects "Email" option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters email "2"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters query "2"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks Submit</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then verify the result is "Success" and the message should be "Invalid email"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.ComparisonFailure: Mail Sent Successfully expected:<[Invalid email]> but was:<[Expected message: Invalid email but found: Mail Sent Successfully]>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at stepDefinitions.LibraryServiceSteps.verify_the_result_is_and_the_message_should_be(LibraryServiceSteps.java:100)
+	at ✽.verify the result is "Success" and the message should be "Invalid email"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardServices.feature:13)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>Submitting Email option with different inputs
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded13.png' src="../reports/Screenshots/embedded13.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="152"><span class="badge log fail-bg mr-2">Fail</span>Submitting Email option with different inputs</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user navigates to the Library Services form</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects "Email" option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters email "3"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters query "3"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks Submit</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then verify the result is "Error" and the message should be "Please Enter Your Query"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.ComparisonFailure: Please Enter Your Query expected:<[]Please Enter Your Qu...> but was:<[Expected message: Please Enter Your Query but found: ]Please Enter Your Qu...>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at stepDefinitions.LibraryServiceSteps.verify_the_result_is_and_the_message_should_be(LibraryServiceSteps.java:100)
+	at ✽.verify the result is "Error" and the message should be "Please Enter Your Query"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardServices.feature:13)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>Submitting Email option with different inputs
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded14.png' src="../reports/Screenshots/embedded14.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="167"><span class="badge log fail-bg mr-2">Fail</span>Verify call option displays correct information</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_opens_the_call_option()">
+                <span>Given the user opens the call option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefinitions.LibraryServiceSteps.verify_the_call_message_should_be_and(java.lang.String,java.lang.String)">
+                <span>Then verify the call message should be "Call our Librarian at 982-098-8900" and "Time : 10am - 3pm"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.ComparisonFailure: Call our Librarian at 982-098-8900 expected:<Call [our Librarian at 982-098-8900]> but was:<Call [message mismatch!]>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at stepDefinitions.LibraryServiceSteps.verify_the_call_message_should_be_and(LibraryServiceSteps.java:124)
+	at ✽.verify the call message should be "Call our Librarian at 982-098-8900" and "Time : 10am - 3pm"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardServices.feature:24)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>Verify call option displays correct information
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded15.png' src="../reports/Screenshots/embedded15.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="174"><span class="badge log pass-bg mr-2">Pass</span>Verify chat submission with valid details</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_opens_the_chat_option()">
+                <span>Given the user opens the chat option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_enters_name(java.lang.String)">
+                <span>When the user enters chat name "Rahul"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_enters_phone(java.lang.String)">
+                <span>And the user enters chat phone "9876543210"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_enters_chat_query(java.lang.String)">
+                <span>And the user enters chat query "Help with eBooks"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_clicks_on_submit()">
+                <span>And the user clicks on Submit for chat</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.verify_the_chat_result_is_and_the_message_should_be(java.lang.String,java.lang.String)">
+                <span>Then verify the chat result is "Success" and the message should be "Message Sent Successfully"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="189"><span class="badge log fail-bg mr-2">Fail</span>Verify chat submission with invalid phone number</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_opens_the_chat_option()">
+                <span>Given the user opens the chat option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_enters_name(java.lang.String)">
+                <span>When the user enters chat name "Tina"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_enters_phone(java.lang.String)">
+                <span>And the user enters chat phone "1234"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_enters_chat_query(java.lang.String)">
+                <span>And the user enters chat query "Need journals"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LibraryServiceSteps.the_user_clicks_on_submit()">
+                <span>And the user clicks on Submit for chat</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefinitions.LibraryServiceSteps.verify_the_chat_result_is_and_the_message_should_be(java.lang.String,java.lang.String)">
+                <span>Then verify the chat result is "Error" and the message should be "Phone must be 10 digits"</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at stepDefinitions.LibraryServiceSteps.verify_the_chat_result_is_and_the_message_should_be(LibraryServiceSteps.java:190)
+	at ✽.verify the chat result is "Error" and the message should be "Phone must be 10 digits"(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryCardServices.feature:42)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>Verify chat submission with invalid phone number
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded16.png' src="../reports/Screenshots/embedded16.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="204"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Check Membership feature</p>
+            <p class="text-sm">
+              <span>12:12:18 pm</span> / <span>00:00:36:736</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Check Membership feature</h5>
+<span class='badge badge-success'>07.30.2025 12:12:18 pm</span>
+<span class='badge badge-danger'>07.30.2025 12:12:55 pm</span>
+<span class='badge badge-default'>00:00:36:736</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=204</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> I want to use this template for my feature file</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="205"><span class="badge log pass-bg mr-2">Pass</span>Validate Membership with blank Library card number</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="206"><span class="badge log pass-bg mr-2">Pass</span>Validate Membership with blank Library card number</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Go to the Membership section</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And drag and drop book</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Select "Gold" Membership</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Enter Blank Library card Number</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on Submit</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Error message "Please Enter Your Card number" should be displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="221"><span class="badge log pass-bg mr-2">Pass</span>Validate Membership with blank Library card number</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Go to the Membership section</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And drag and drop book</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Select "Platinum" Membership</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Enter Blank Library card Number</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on Submit</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Error message "Please Enter Your Card number" should be displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="236"><span class="badge log fail-bg mr-2">Fail</span>Validate Membership with Invalid Library card number</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="237"><span class="badge log fail-bg mr-2">Fail</span>Validate Membership with Invalid Library card number</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Go to the Membership section</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And drag and drop book</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Select "Gold" Membership</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Enter "asddf" Library card Number</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on Submit</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then The Message "Please Enter valid Library card Number" should be displayed</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[Please Enter valid Library card Number]> but was:<[Membership Added]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at stepDefinitions.LibraryMembershipSteps.the_message_should_be_displayed(LibraryMembershipSteps.java:62)
+	at ✽.The Message "Please Enter valid Library card Number" should be displayed(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryMembership.feature:26)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>Validate Membership with Invalid Library card number
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded17.png' src="../reports/Screenshots/embedded17.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="252"><span class="badge log fail-bg mr-2">Fail</span>Validate Membership with Invalid Library card number</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Go to the Membership section</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And drag and drop book</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Select "Platinum" Membership</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Enter "asddf" Library card Number</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on Submit</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then The Message "Please Enter valid Library card Number" should be displayed</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[Please Enter valid Library card Number]> but was:<[Membership Added]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at stepDefinitions.LibraryMembershipSteps.the_message_should_be_displayed(LibraryMembershipSteps.java:62)
+	at ✽.The Message "Please Enter valid Library card Number" should be displayed(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/LibraryMembership.feature:26)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>Validate Membership with Invalid Library card number
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded18.png' src="../reports/Screenshots/embedded18.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="267"><span class="badge log pass-bg mr-2">Pass</span>Validate Membership with Valid Library card number</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="268"><span class="badge log pass-bg mr-2">Pass</span>Validate Membership with Valid Library card number</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Go to the Membership section</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And drag and drop book</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Select "Gold" Membership</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Enter "95876543210" Library card Number</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on Submit</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The Message "Membership Added" should be displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="283"><span class="badge log pass-bg mr-2">Pass</span>Validate Membership with Valid Library card number</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Go to the Membership section</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And drag and drop book</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Select "Platinum" Membership</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Enter "95876543210" Library card Number</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on Submit</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The Message "Membership Added" should be displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="298"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Search Functionality Check</p>
+            <p class="text-sm">
+              <span>12:12:55 pm</span> / <span>00:00:48:113</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Search Functionality Check</h5>
+<span class='badge badge-success'>07.30.2025 12:12:55 pm</span>
+<span class='badge badge-danger'>07.30.2025 12:13:43 pm</span>
+<span class='badge badge-default'>00:00:48:113</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=298</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="299"><span class="badge log pass-bg mr-2">Pass</span>LMSTC001: Validate search with all valid fields</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.navigate_to_the_search_page()">
+                <span>Given Navigate to the search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.enter_valid_data_for_all_the_fields(io.cucumber.datatable.DataTable)">
+                <span>When Enter valid data for all the fields</span>
+      <div><table class='markup-table table '><tr><td>Author</td><td>Edition</td><td>Subject</td><td>Format</td><td>Age</td></tr><tr><td>Flannery O'Connor</td><td>Edition 5</td><td>fiction</td><td>E_Books</td><td>kids</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.click_the_submit_button()">
+                <span>And Click the Submit button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.matching_book_record_appears_for_the_given_criteria()">
+                <span>Then Matching book record appears for the given criteria</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="310"><span class="badge log pass-bg mr-2">Pass</span>LMSTC002: Validate mandatory fields</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.navigate_to_the_search_page()">
+                <span>Given Navigate to the search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.leave_some_or_all_of_the_fields_blank(io.cucumber.datatable.DataTable)">
+                <span>When Leave some or all of the fields blank</span>
+      <div><table class='markup-table table '><tr><td>Author</td><td>Edition</td><td>Subject</td><td>Format</td><td>Age</td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.click_the_submit_button()">
+                <span>And Click the Submit button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.blank_fields_show_error_message_to_fill_the_respective_fields()">
+                <span>Then Blank fields show error message to fill the respective fields</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="321"><span class="badge log fail-bg mr-2">Fail</span>LMSTC003: Validate Invalid Author Name</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.navigate_to_the_search_page()">
+                <span>Given Navigate to the search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.enter_invalid_author_name_and_other_fields_correctly(io.cucumber.datatable.DataTable)">
+                <span>When Enter Invalid Author Name and other fields correctly</span>
+      <div><table class='markup-table table '><tr><td>Author</td><td>Edition</td><td>Subject</td><td>Format</td><td>Age</td></tr><tr><td>@abc123</td><td>Edition 5</td><td>fiction</td><td>E_Books</td><td>kids</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.click_the_submit_button()">
+                <span>And Click the Submit button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefinitions.ValidatingSearchBooks.error_message_or_warning_should_be_displayed_for_invalid_author_name()">
+                <span>Then Error message or warning should be displayed for invalid author name</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNotNull(Assert.java:256)
+	at junit.framework.Assert.assertNotNull(Assert.java:248)
+	at stepDefinitions.ValidatingSearchBooks.error_message_or_warning_should_be_displayed_for_invalid_author_name(ValidatingSearchBooks.java:144)
+	at ✽.Error message or warning should be displayed for invalid author name(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/ValidatingSearchBooks.feature:29)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMSTC003: Validate Invalid Author Name
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded19.png' src="../reports/Screenshots/embedded19.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="332"><span class="badge log fail-bg mr-2">Fail</span>LMSTC004: Validate Invalid Subject</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.navigate_to_the_search_page()">
+                <span>Given Navigate to the search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.enter_invalid_subject_and_other_fields_correctly(io.cucumber.datatable.DataTable)">
+                <span>When Enter Invalid subject and other fields correctly</span>
+      <div><table class='markup-table table '><tr><td>Author</td><td>Edition</td><td>Subject</td><td>Format</td><td>Age</td></tr><tr><td>Flannery O'Connor</td><td>Edition 5</td><td>abc@123</td><td>E_Books</td><td>kids</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.click_the_submit_button()">
+                <span>And Click the Submit button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefinitions.ValidatingSearchBooks.error_message_or_warning_should_be_displayed_for_invalid_subject()">
+                <span>Then Error message or warning should be displayed for invalid subject</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNotNull(Assert.java:256)
+	at junit.framework.Assert.assertNotNull(Assert.java:248)
+	at stepDefinitions.ValidatingSearchBooks.error_message_or_warning_should_be_displayed_for_invalid_subject(ValidatingSearchBooks.java:175)
+	at ✽.Error message or warning should be displayed for invalid subject(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/ValidatingSearchBooks.feature:38)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMSTC004: Validate Invalid Subject
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded20.png' src="../reports/Screenshots/embedded20.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="343"><span class="badge log fail-bg mr-2">Fail</span>LMSTC005: Validating case insensitive search across all fields</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.navigate_to_the_search_page()">
+                <span>Given Navigate to the search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.enter_lowercase_mixed_case_values_for_author_name_and_subject(io.cucumber.datatable.DataTable)">
+                <span>When Enter lowercase/mixed-case values for author name and subject</span>
+      <div><table class='markup-table table '><tr><td>Author</td><td>Edition</td><td>Subject</td><td>Format</td><td>Age</td></tr><tr><td>flannery o’connor</td><td>Edition 5</td><td>Fiction</td><td>E_Books</td><td>Kids</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.click_the_submit_button()">
+                <span>And Click the Submit button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefinitions.ValidatingSearchBooks.matching_book_is_displayed()">
+                <span>Then Matching book is displayed</span>
+      <div>
+        <textarea disabled class="code-block">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNotNull(Assert.java:256)
+	at junit.framework.Assert.assertNotNull(Assert.java:248)
+	at stepDefinitions.ValidatingSearchBooks.matching_book_is_displayed(ValidatingSearchBooks.java:206)
+	at ✽.Matching book is displayed(file:///C:/Users/91920/git/Sprint-Project/src/test/java/features/ValidatingSearchBooks.feature:47)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>hooks.Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
+      <div>LMSTC005: Validating case insensitive search across all fields
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../reports/Screenshots/embedded21.png' src="../reports/Screenshots/embedded21.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="354"><span class="badge log pass-bg mr-2">Pass</span>LMSTC006: Valid search with mismatched author</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.navigate_to_the_search_page()">
+                <span>Given Navigate to the search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.enter_valid_but_mismatched_author(io.cucumber.datatable.DataTable)">
+                <span>When Enter valid but mismatched author</span>
+      <div><table class='markup-table table '><tr><td>Author</td><td>Edition</td><td>Subject</td><td>Format</td><td>Age</td></tr><tr><td>George Orwell</td><td>Edition 5</td><td>fiction</td><td>E_Books</td><td>kids</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.click_the_submit_button()">
+                <span>And Click the Submit button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.no_book_record_is_displayed()">
+                <span>Then No Book Record is displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="365"><span class="badge log pass-bg mr-2">Pass</span>LMSTC007: Validate search with mismatched subject</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.navigate_to_the_search_page()">
+                <span>Given Navigate to the search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.enter_valid_but_mismatched_subject(io.cucumber.datatable.DataTable)">
+                <span>When Enter valid but mismatched subject</span>
+      <div><table class='markup-table table '><tr><td>Author</td><td>Edition</td><td>Subject</td><td>Format</td><td>Age</td></tr><tr><td>Flannery O'Connor</td><td>Edition 5</td><td>non-fiction</td><td>E_Books</td><td>kids</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.click_the_submit_button()">
+                <span>And Click the Submit button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ValidatingSearchBooks.no_book_record_is_displayed()">
+                <span>Then No Book Record is displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>15</span>
+</span>
+<p class="name">junit.framework.AssertionFailedError</p>
+<p class="duration text-sm">15 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>junit.framework.AssertionFailedError</h4>
+<span status="fail" class='badge log badge-danger'>15 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='45'>Then Enter the all the data and verify it "5"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC004: Verifying Invalid Email.Then Enter the all the data and verify it "5"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='52'>Then Enter the all the data and verify it "6"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC004: Verifying Invalid Email.Then Enter the all the data and verify it "6"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:28 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='59'>Then Enter the all the data and verify it "7"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC004: Verifying Invalid Email.Then Enter the all the data and verify it "7"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='67'>Then Enter the all the data and verify it "8"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Age Format.Then Enter the all the data and verify it "8"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>Then Enter the all the data and verify it "9"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Age Format.Then Enter the all the data and verify it "9"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:02 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='81'>Then Enter the all the data and verify it "10"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Age Format.Then Enter the all the data and verify it "10"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='88'>Then Enter the all the data and verify it "11"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Age Format.Then Enter the all the data and verify it "11"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:16 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='96'>Then Enter the all the data and verify it "12"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Phone Number Format.Then Enter the all the data and verify it "12"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:23 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='103'>Then Enter the all the data and verify it "13"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Phone Number Format.Then Enter the all the data and verify it "13"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='110'>Then Enter the all the data and verify it "14"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Phone Number Format.Then Enter the all the data and verify it "14"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='117'>Then Enter the all the data and verify it "15"</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Phone Number Format.Then Enter the all the data and verify it "15"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:12:02 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='201'>Then verify the chat result is "Error" and the message should be "Phone must be 10 digits"</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Verify chat submission with invalid phone number.Then verify the chat result is "Error" and the message should be "Phone must be 10 digits"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:13:14 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='329'>Then Error message or warning should be displayed for invalid author name</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC003: Validate Invalid Author Name.Then Error message or warning should be displayed for invalid author name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:13:21 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='340'>Then Error message or warning should be displayed for invalid subject</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC004: Validate Invalid Subject.Then Error message or warning should be displayed for invalid subject</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:13:28 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='351'>Then Matching book is displayed</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC005: Validating case insensitive search across all fields.Then Matching book is displayed</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">org.junit.ComparisonFailure</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.junit.ComparisonFailure</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:12:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='249'>Then The Message "Please Enter valid Library card Number" should be displayed</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Invalid Library card number.Then The Message "Please Enter valid Library card Number" should be displayed</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:12:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='264'>Then The Message "Please Enter valid Library card Number" should be displayed</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Invalid Library card number.Then The Message "Please Enter valid Library card Number" should be displayed</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">junit.framework.ComparisonFailure</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>junit.framework.ComparisonFailure</h4>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='134'>Then verify the result is "Success" and the message should be "Mail Sent Successfully"</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Submitting Email option with different inputs.Then verify the result is "Success" and the message should be "Mail Sent Successfully"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='149'>Then verify the result is "Success" and the message should be "Invalid email"</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Submitting Email option with different inputs.Then verify the result is "Success" and the message should be "Invalid email"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='164'>Then verify the result is "Error" and the message should be "Please Enter Your Query"</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Submitting Email option with different inputs.Then verify the result is "Error" and the message should be "Please Enter Your Query"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='171'>Then verify the call message should be "Call our Librarian at 982-098-8900" and "Time : 10am - 3pm"</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Verify call option displays correct information.Then verify the call message should be "Call our Librarian at 982-098-8900" and "Time : 10am - 3pm"</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">21</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@ChatTests(LMSETC006)</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ChatTests(LMSETC006)</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='174'>Verify chat submission with valid details</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Verify chat submission with valid details</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@InvalidAuthorName</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@InvalidAuthorName</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:13:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='321'>LMSTC003: Validate Invalid Author Name</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC003: Validate Invalid Author Name</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@InvalidSubject</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@InvalidSubject</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:13:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='332'>LMSTC004: Validate Invalid Subject</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC004: Validate Invalid Subject</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@MismatchedSubject</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@MismatchedSubject</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='365'>LMSTC007: Validate search with mismatched subject</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC007: Validate search with mismatched subject</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@ChatTests(LMSETC007)</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ChatTests(LMSETC007)</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='189'>Verify chat submission with invalid phone number</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Verify chat submission with invalid phone number</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@CallTests(LMSETC004-005)</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CallTests(LMSETC004-005)</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='167'>Verify call option displays correct information</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Verify call option displays correct information</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>3</span>
+</span>
+<p class="name">@EmailTests(LMSETC001-003)</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@EmailTests(LMSETC001-003)</h4>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='122'>Submitting Email option with different inputs</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Submitting Email option with different inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='137'>Submitting Email option with different inputs</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Submitting Email option with different inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:16 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='152'>Submitting Email option with different inputs</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Submitting Email option with different inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@EmptyNumber</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@EmptyNumber</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:12:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='206'>Validate Membership with blank Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with blank Library card number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:12:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='221'>Validate Membership with blank Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with blank Library card number</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@ValidData</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ValidData</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:12:55 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='299'>LMSTC001: Validate search with all valid fields</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC001: Validate search with all valid fields</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@MandatoryFields</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@MandatoryFields</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:02 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='310'>LMSTC002: Validate mandatory fields</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC002: Validate mandatory fields</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@MismatchedAuthor</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@MismatchedAuthor</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='354'>LMSTC006: Valid search with mismatched author</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC006: Valid search with mismatched author</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">@test</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@test</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:12:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='206'>Validate Membership with blank Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with blank Library card number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:12:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='221'>Validate Membership with blank Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with blank Library card number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:12:29 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='237'>Validate Membership with Invalid Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Invalid Library card number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:12:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='252'>Validate Membership with Invalid Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Invalid Library card number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:12:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='268'>Validate Membership with Valid Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Valid Library card number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:12:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='283'>Validate Membership with Valid Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Valid Library card number</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@EmptyDetails</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@EmptyDetails</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:09:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='31'>LMTC002: Verfying the details with empty field</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC002: Verfying the details with empty field</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+</span>
+<p class="name">@ValidDetails</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ValidDetails</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:08:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>LMTC001: Validating the Library card with valid data</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC001: Validating the Library card with valid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:08:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='10'>LMTC001: Validating the Library card with valid data</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC001: Validating the Library card with valid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:08:46 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>LMTC001: Validating the Library card with valid data</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC001: Validating the Library card with valid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:08:52 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>LMTC001: Validating the Library card with valid data</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC001: Validating the Library card with valid data</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">@InvalidNumber</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@InvalidNumber</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:12:29 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='237'>Validate Membership with Invalid Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Invalid Library card number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:12:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='252'>Validate Membership with Invalid Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Invalid Library card number</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@ValidNumber</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ValidNumber</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:12:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='268'>Validate Membership with Valid Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Valid Library card number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:12:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='204' id='283'>Validate Membership with Valid Library card number</a>
+<div class="">
+<span class="badge badge-default">Check Membership feature.Validate Membership with Valid Library card number</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@CaseInSensitiveSearch</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CaseInSensitiveSearch</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:13:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='298' id='343'>LMSTC005: Validating case insensitive search across all fields</a>
+<div class="">
+<span class="badge badge-default">Search Functionality Check.LMSTC005: Validating case insensitive search across all fields</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">@InvalidAge</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@InvalidAge</h4>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='63'>LMTC005:Verifying Invalid Age Format</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Age Format</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='70'>LMTC005:Verifying Invalid Age Format</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Age Format</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:57 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='77'>LMTC005:Verifying Invalid Age Format</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Age Format</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='84'>LMTC005:Verifying Invalid Age Format</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Age Format</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>3</span>
+</span>
+<p class="name">@InvalidEmail</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@InvalidEmail</h4>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='41'>LMTC004: Verifying Invalid Email</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC004: Verifying Invalid Email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='48'>LMTC004: Verifying Invalid Email</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC004: Verifying Invalid Email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:09:23 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='55'>LMTC004: Verifying Invalid Email</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC004: Verifying Invalid Email</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">@InvalidPhoneNumber</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@InvalidPhoneNumber</h4>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:11 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='92'>LMTC005:Verifying Invalid Phone Number Format</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Phone Number Format</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='99'>LMTC005:Verifying Invalid Phone Number Format</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Phone Number Format</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:26 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='106'>LMTC005:Verifying Invalid Phone Number Format</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Phone Number Format</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='113'>LMTC005:Verifying Invalid Phone Number Format</a>
+<div class="">
+<span class="badge badge-default">Apply or Renew the Library card.LMTC005:Verifying Invalid Phone Number Format</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@ServiceTests</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ServiceTests</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:10:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='122'>Submitting Email option with different inputs</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Submitting Email option with different inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='137'>Submitting Email option with different inputs</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Submitting Email option with different inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:16 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='152'>Submitting Email option with different inputs</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Submitting Email option with different inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='167'>Verify call option displays correct information</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Verify call option displays correct information</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='174'>Verify chat submission with valid details</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Verify chat submission with valid details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:11:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='120' id='189'>Verify chat submission with invalid phone number</a>
+<div class="">
+<span class="badge badge-default">Library Services Form Submission Testing.Verify chat submission with invalid phone number</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 30, 2025 12:08:30 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 30, 2025 12:13:43 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>4</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>4</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='40%'><b>14</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='60%'><b>21</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='86%'><b>129</b> steps passed</small></div>
+<div>
+<small data-tooltip='14%'><b>21</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Apply or Renew the Library card":130.532,"Library Services Form Submission Testing":96.771,"Check Membership feature":36.736,"Search Functionality Check":48.113
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@ChatTests(LMSETC006)</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@InvalidAuthorName</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@InvalidSubject</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@MismatchedSubject</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@ChatTests(LMSETC007)</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CallTests(LMSETC004-005)</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@EmailTests(LMSETC001-003)</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@EmptyNumber</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@ValidData</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@MandatoryFields</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@MismatchedAuthor</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@test</td>
+<td>4</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>66.667%</td>
+</tr>
+<tr>
+<td>@EmptyDetails</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@ValidDetails</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@InvalidNumber</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@ValidNumber</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@CaseInSensitiveSearch</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@InvalidAge</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@InvalidEmail</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@InvalidPhoneNumber</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@ServiceTests</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>16.667%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 4,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 14,
+failChild: 21,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 129,
+failGrandChild: 21,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
