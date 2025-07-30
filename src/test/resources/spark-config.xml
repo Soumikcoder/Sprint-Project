@@ -1,0 +1,7 @@
+<extentreports>
+    <configuration>
+        <theme>dark</theme> <!-- Options: standard, dark -->
+        <documentTitle>Extent Report</documentTitle>
+        <reportName>BDD Test Report</reportName>
+    </configuration>
+</extentreports>

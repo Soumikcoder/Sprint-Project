@@ -1,12 +1,15 @@
 package pages;
 
+import java.time.Duration;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LibraryCardPage extends BasePage{
    
@@ -72,15 +75,17 @@ public void setPhone(String phone) {
 }
 
 public void setWork(String work,String OrgName) throws InterruptedException {
+	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
          if(work.equalsIgnoreCase("student")) {
         	 Student.click();
-        	 Thread.sleep(1000);
+        	
+     		wait.until(ExpectedConditions.visibilityOf(school));
         	 school.sendKeys(OrgName);
          }
          else 
          {
         	 Employee.click();
-        	 Thread.sleep(5000);
+        	 wait.until(ExpectedConditions.visibilityOf(company));
         	 company.sendKeys(OrgName);
          }
 }
