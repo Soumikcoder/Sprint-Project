@@ -87,12 +87,7 @@ public class LibraryServicePage {
          wait.until(ExpectedConditions.elementToBeClickable(serviceTab));
          serviceTab.click();
 
-         // Wait for 2 seconds for UI load
-         try {
-             Thread.sleep(2000);
-         } catch (InterruptedException e) {
-             e.printStackTrace();
-         }
+         
 
          // Wait until Email radio is clickable
          wait.until(ExpectedConditions.elementToBeClickable(emailRadio));
@@ -101,11 +96,7 @@ public class LibraryServicePage {
          ((JavascriptExecutor) driver).executeScript("arguments[0].click();", emailRadio);
 
          // Wait a bit for email form fields to appear
-         try {
-             Thread.sleep(2000);
-         } catch (InterruptedException e) {
-             e.printStackTrace();
-         }
+        
     }
 
 
@@ -175,12 +166,12 @@ public class LibraryServicePage {
         wait.until(ExpectedConditions.elementToBeClickable(serviceTab));
         serviceTab.click();
 
-        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+        
 
         wait.until(ExpectedConditions.elementToBeClickable(chatRadio));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", chatRadio);
 
-        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+        
     }
 
     public void enterName(String name) {
@@ -209,11 +200,7 @@ public class LibraryServicePage {
         chatSubmitButton.click();
     }
     private void sleep(long ms) {
-        try {
-            Thread.sleep(ms);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        
     }
 
     // =================== MESSAGE FETCHERS ===================

@@ -48,7 +48,7 @@ public class LibraryServiceSteps {
     	@When("the user selects {string} option")
     	public void the_user_selects_option(String option) throws InterruptedException {
     	    page.openAndSelectEmailOption();
-    	    Thread.sleep(3000); // Wait after clicking services tab
+   
     	    if (option.equalsIgnoreCase("Email")) {
     	        page.openAndSelectEmailOption();
     	    }

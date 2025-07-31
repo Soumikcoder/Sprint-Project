@@ -7,8 +7,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.Status;
 import pages.HomePage;
@@ -17,10 +19,10 @@ import setup.AppPropProvider;
 import setup.DriverSetup;
 
 public class Hooks {
-	private static WebDriver driver;
+	private WebDriver driver;
 	private HomePage homepage;
 	
-	public static WebDriver getDriver() {
+	public WebDriver getDriver() {
 		return driver;
 	}
 	public void setDriver(WebDriver driver) {
@@ -48,6 +50,8 @@ public class Hooks {
 	}
 	@After
 	public void tearDown() {
-		driver.close();
+		if(driver!= null) {
+			driver.quit();
+		}
 	}
 }
