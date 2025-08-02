@@ -2,6 +2,7 @@ package runners;
 
 import org.junit.runner.RunWith;
 
+import cucumber.api.cli.Main;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
@@ -13,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 			"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 			},
 	dryRun=false
-
+	//tags="@EmailTests"
 	
 )
 public class TestRunner {
