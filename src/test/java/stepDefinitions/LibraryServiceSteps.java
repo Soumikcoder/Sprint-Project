@@ -1,6 +1,7 @@
 
 package stepDefinitions;
 
+import java.awt.List;
 import java.time.Duration;
 import java.util.concurrent.TimeoutException;
 
@@ -80,16 +81,24 @@ public class LibraryServiceSteps {
 
         try {
             if (expectedResult.equalsIgnoreCase("Success")) {
+                // Wait for success message
                 WebElement successElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mediummailoutput")));
                 actualMessage = successElement.getText().trim();
             } 
             else if (expectedResult.equalsIgnoreCase("Error")) {
-                // For errors like "Please enter your query"
-                WebElement errorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("queryemailError")));
-                actualMessage = errorElement.getText().trim();
+                // Check if "Invalid Email" or "Query Required" error appears
+                java.util.List<WebElement> errorMessages = driver.findElements(By.cssSelector(".error-message, #queryemailError"));
+
+                if (!errorMessages.isEmpty()) {
+                    for (WebElement error : errorMessages) {
+                        if (error.isDisplayed() && !error.getText().trim().isEmpty()) {
+                            actualMessage = error.getText().trim();
+                            break;
+                        }
+                    }
+                }
             }
 
-            // If no message is found, handle this
             if (actualMessage.isEmpty()) {
                 actualMessage = "No message displayed";
             }
@@ -104,6 +113,7 @@ public class LibraryServiceSteps {
             Assert.fail("Message validation failed: " + e.getMessage());
         }
     }
+
     //=========================CALL STEPS===========================
     @Given("the user opens the call option")
     public void the_user_opens_the_call_option() {

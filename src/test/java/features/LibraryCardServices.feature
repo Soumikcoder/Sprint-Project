@@ -3,7 +3,7 @@ Feature: Library Services Form Submission Testing
 As a user I want to interact with Library Services options(Email, Call, Chat)
 So that I can submit my queries successfully
 
-@EmailTests(LMSETC001-003)
+@EmailTests
 Scenario Outline: Submitting Email option with different inputs
   Given the user navigates to the Library Services form
   When the user selects "Email" option
@@ -18,12 +18,12 @@ Scenario Outline: Submitting Email option with different inputs
   | 2         | Success         | Invalid email          |
   | 3         | Error           | Please Enter Your Query|
  
-  @CallTests(LMSETC004-005)
+  @CallTests
 	Scenario: Verify call option displays correct information
   Given the user opens the call option
   Then verify the call message should be "Call our Librarian at 982-098-8900" and "Time : 10am - 3pm"
   
-   @ChatTests(LMSETC006)
+   @ChatTests
   Scenario: Verify chat submission with valid details
     Given the user opens the chat option
     When the user enters chat name "Rahul"
