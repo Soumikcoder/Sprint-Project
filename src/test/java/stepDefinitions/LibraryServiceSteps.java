@@ -11,13 +11,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.Assert;
-import junit.framework.Assert;
+//import junit.framework.Assert;
+import org.junit.Assert;
 
 import hooks.Hooks;
 import io.cucumber.java.en.*;
 import pages.HomePage;
 import pages.LibraryServicePage;
-import setup.DriverSetup;
 import utilities.ExcelReader;
 //import utils.DataReader;
 
@@ -82,12 +82,16 @@ public class LibraryServiceSteps {
         try {
             if (expectedResult.equalsIgnoreCase("Success")) {
                 // Wait for success message
-                WebElement successElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mediummailoutput")));
+                WebElement successElement = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(By.id("mediummailoutput"))
+                );
                 actualMessage = successElement.getText().trim();
             } 
             else if (expectedResult.equalsIgnoreCase("Error")) {
                 // Check if "Invalid Email" or "Query Required" error appears
-                java.util.List<WebElement> errorMessages = driver.findElements(By.cssSelector(".error-message, #queryemailError"));
+                java.util.List<WebElement> errorMessages = driver.findElements(
+                    By.cssSelector(".error-message, #queryemailError")
+                );
 
                 if (!errorMessages.isEmpty()) {
                     for (WebElement error : errorMessages) {
@@ -106,8 +110,8 @@ public class LibraryServiceSteps {
             System.out.println("Expected: " + expectedMessage);
             System.out.println("Actual: " + actualMessage);
 
-            Assert.assertEquals(actualMessage, expectedMessage,
-                "Expected message: " + expectedMessage + " but found: " + actualMessage);
+            // JUnit Assertion (expected first, actual second)
+            Assert.assertEquals("Message mismatch!", expectedMessage, actualMessage);
 
         } catch (Exception e) {
             Assert.fail("Message validation failed: " + e.getMessage());
@@ -131,8 +135,9 @@ public class LibraryServiceSteps {
         System.out.println("Expected Time: " + expectedTime);
         System.out.println("Actual Time: " + actualTime);
 
-        Assert.assertEquals(actualCallMessage, expectedCallMessage, "Call message mismatch!");
-        Assert.assertEquals(actualTime, expectedTime, "Call time mismatch!");
+        // JUnit assertions (expected first, actual second)
+        Assert.assertEquals("Call message mismatch!", expectedCallMessage, actualCallMessage);
+        Assert.assertEquals("Call time mismatch!", expectedTime, actualTime);
     }
 
 
