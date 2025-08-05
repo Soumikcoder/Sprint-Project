@@ -8,7 +8,7 @@ public class HomePage extends BasePage{
 
 	public HomePage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@FindBy(xpath="//a[@id='searchlink']")
@@ -24,21 +24,32 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//a[@id='memberlink']")
 	WebElement memberLink;
 	
+	//It opens the search functionality
 	public void openSearchTab() {
 		searchLink.click();
 	}
+	
+	//It open the Library Card Tab
 	public void openLibraryCardTab() {
 		libraryCardLink.click();
 	}
+	
+	//It open the service Tab
 	public void openServicesTab() {
 		servicesLink.click();
 	}
+	
+	//It will open the Books Tab
 	public void openBooksTab() {
 		booksLink.click();
 	}
+	
+	//It will opens the membership Tab
 	public void openMembershipTab() {
 		membershipLink.click();
 	}
+	
+	//It will open the Members Tab
 	public void openMembersTab() {
 		memberLink.click();
 	}

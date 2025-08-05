@@ -1,5 +1,9 @@
 package stepDefinitions;
 
+import static org.junit.Assert.assertEquals;
+
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -77,27 +81,28 @@ public class LibraryCardEntry {
 			if (exp_res.equalsIgnoreCase("Valid")) {
 				if (targetpage == true) {
 
-					Assert.assertTrue(true);
+					assertTrue(true);
 				} else {
-					Assert.assertTrue(false);
+					assertTrue(false);
 				}
 			}
 
 			if (exp_res.equalsIgnoreCase("Invalid")) {
 				if (targetpage == true) {
 
-					Assert.assertTrue(false);
+				assertTrue(false);
 				} else {
-					Assert.assertTrue(true);
+					assertTrue(true);
 				}
 			}
 
 		} catch (Exception e) {
 
-			Assert.assertTrue(false);
+			assertTrue(false);
 		}
 
 	}
+
 
 	@When("The user left the field empty and enters the details and click on submit")
 	public void the_user_left_the_field_empty_and_enters_the_details_and_click_on_submit() {
@@ -108,7 +113,7 @@ public class LibraryCardEntry {
 	@Then("verify the details are not submitted")
 	public void verify_the_details_are_not_submitted() {
 		// Write code here that turns the phrase above into concrete actions
-		Assert.assertEquals(lcp.isFormSubmit(), false);
+		assertEquals(lcp.isFormSubmit(), false);
 	}
 
 }
