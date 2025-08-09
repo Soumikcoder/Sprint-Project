@@ -1,0 +1,38 @@
+name: Maven Tests with Firefox Headless
+
+on:
+  push:
+    branches: ["**"]   # Runs on all branches
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17  # Change to 8 if needed
+
+      - name: Install Firefox
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y firefox
+
+      - name: Install Geckodriver
+        run: |
+          GECKODRIVER_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep tag_name | cut -d '"' -f 4)
+          wget https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz
+          tar -xvzf geckodriver-*-linux64.tar.gz
+          sudo mv geckodriver /usr/local/bin/
+          geckodriver --version
+
+      - name: Run Maven tests with Firefox Headless
+        run: |
+          export MOZ_HEADLESS=1
+          mvn clean test -B
