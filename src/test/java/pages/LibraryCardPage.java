@@ -17,7 +17,7 @@ public class LibraryCardPage extends BasePage{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	
+//WebElements
 @FindBy(id = "first")
 private WebElement firstNameInput;
 
@@ -104,7 +104,7 @@ public boolean isFormSubmit() {
     try {
     	
       
-        scrollToElement(successMessage, driver);
+        scrollToElement(successMessage);
         
         return successMessage.isDisplayed(); 
        
@@ -112,7 +112,7 @@ public boolean isFormSubmit() {
         return false;
     }
 }
-public void scrollToElement(WebElement element, WebDriver driver) {
+public void scrollToElement(WebElement element) {
     JavascriptExecutor js = (JavascriptExecutor) driver;
     js.executeScript("arguments[0].scrollIntoView(true);", element);
 }
